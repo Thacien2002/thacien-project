@@ -1,0 +1,29 @@
+# AI Configuration for Rwanda Nutrition Dashboard
+# This file contains configuration for AI services
+
+# Gemini API Configuration
+gemini:
+  api_key: "AIzaSyDKcdDI8VTB7iudAtX33QmHEjsBxY5SnVU"  # Hardcoded API key for immediate use
+  model: "gemini-pro"
+  temperature: 0.7
+  max_tokens: 1024
+  timeout: 30
+
+# Alternative AI Services (for future expansion)
+openai:
+  api_key: ""  # OpenAI API key if you want to use GPT models
+  model: "gpt-3.5-turbo"
+
+# AI Features Configuration
+features:
+  policy_recommendations: true
+  data_insights: true
+  trend_analysis: true
+  risk_assessment: true
+  mock_mode: false  # Real AI enabled with API key
+
+# UI Configuration
+ui:
+  show_ai_indicators: true
+  ai_loading_message: "🤖 AI is analyzing your data..."
+  fallback_to_mock: true

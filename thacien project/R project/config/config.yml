@@ -1,0 +1,29 @@
+default:
+  app_name: "Rwanda Nutrition Dashboard"
+  theme:
+    primary_color: "#1F2937"
+    secondary_color: "#2C7A50"
+    accent_color: "#F6B800"
+    background_color: "#F3F4F6"
+  
+  data_sources:
+    wdi_api: 
+      country_code: "RW"
+      indicators:
+        - "SH.STA.STNT.ZS"  # Stunting
+        - "SH.STA.WAST.ZS"  # Wasting
+        - "SH.ANM.ALLW.ZS"  # Anemia
+    
+  ai_settings:
+    model: "gemini-pro"
+    google_api_key: "AIzaSyDKcdDI8VTB7iudAtX33QmHEjsBxY5SnVU"
+    max_tokens: 500
+    temperature: 0.7
+
+development:
+  debug: true
+  log_level: "INFO"
+
+production:
+  debug: false
+  log_level: "WARN"

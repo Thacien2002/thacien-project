@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Sidebar Test</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+        .main-content {
+            margin-left: 280px;
+            padding: 20px;
+            transition: margin-left 0.3s ease-in-out;
+        }
+        .main-content.sidebar-collapsed {
+            margin-left: 70px;
+        }
+        .demo-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content" id="main-content">
+        <div class="demo-content">
+            <h1>Modern Sidebar Navigation Test</h1>
+            <p>This is a test page to demonstrate the modern sidebar navigation functionality.</p>
+            <p>Features:</p>
+            <ul>
+                <li>✅ Toggle button to collapse/expand sidebar</li>
+                <li>✅ Smooth animations and transitions</li>
+                <li>✅ Hover effects on menu items</li>
+                <li>✅ Global filters section</li>
+                <li>✅ Responsive design</li>
+                <li>✅ Tooltips when collapsed</li>
+                <li>✅ Keyboard shortcuts (Ctrl+B to toggle)</li>
+            </ul>
+            <p>Try clicking the toggle button or pressing Ctrl+B to collapse the sidebar!</p>
+        </div>
+    </div>
+
+    <script src="sidebar.js"></script>
+    <script>
+        // Test the sidebar functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Sidebar test page loaded');
+            
+            // Listen for sidebar events
+            document.addEventListener('sidebar:sidebar-expanded', function(e) {
+                console.log('Sidebar expanded');
+            });
+            
+            document.addEventListener('sidebar:sidebar-collapsed', function(e) {
+                console.log('Sidebar collapsed');
+            });
+            
+            document.addEventListener('sidebar:menu-item-selected', function(e) {
+                console.log('Menu item selected:', e.detail.tabName);
+            });
+            
+            document.addEventListener('sidebar:filters-changed', function(e) {
+                console.log('Filters changed:', e.detail.filters);
+            });
+        });
+    </script>
+</body>
+</html>
